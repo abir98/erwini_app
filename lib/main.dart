@@ -3,6 +3,7 @@ import 'package:erwini/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:erwini/login.dart';
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp(
   ));
 }
