@@ -1,7 +1,10 @@
+import 'package:erwini/map.dart';
 import 'package:erwini/widgets/header.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+
+import 'measures.dart';
 
 
 class login extends StatefulWidget {
@@ -10,93 +13,118 @@ class login extends StatefulWidget {
   @override
   State<login> createState() => _loginState();
 }
-Color c1 = const Color(0x000ba469);
+Color c1 = const Color.fromARGB(255, 11, 164, 105);
+
+
 class _loginState extends State<login> {
+  bool _isObscure = true;
+  TextEditingController passwordController=TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: flutterlogin()
-    );
-  }
-}
-
-class flutterlogin extends StatefulWidget {
-  const flutterlogin({Key? key}) : super(key: key);
-
-  @override
-  State<flutterlogin> createState() => _flutterloginState();
-}
-
-class _flutterloginState extends State<flutterlogin> {
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children:<Widget> [
-        ClipPath(clipper: waveclipper(),
-          child:
-          Container(
-            color:const Color.fromARGB(255, 11, 164, 105),
-            height: 130,
-          ),
-        ),
+        resizeToAvoidBottomInset : false,
+      body: Stack(
+          children:<Widget> [
+            ClipPath(clipper: waveclipper(),
+              child:
+              Container(
+                color:const Color.fromARGB(255, 11, 164, 105),
+                height: 130,
+              ),
+            ),
             Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children:[ Image.asset("images/vertbgblanc.png" ,scale:3 ),
-    Container(
-      margin: EdgeInsets.all(15),
-    padding:  EdgeInsets.fromLTRB(37, 34, 36, 63),
-    width:  double.maxFinite,
-    decoration:  BoxDecoration (
-    color:  Color(0xff0ba469),
-    borderRadius:  BorderRadius.circular(30),
-    ),
-     child:
-    Column(
-    crossAxisAlignment:  CrossAxisAlignment.center,
-    children: [
-      Text("تسجيل الدخول " ,
-        textAlign: TextAlign.center,
-        style:GoogleFonts.workSans(
-            color: Colors.white,
-              fontSize: 32,fontWeight: FontWeight.bold),
-      ),
-      SizedBox(
-        height: 4,
-      ),
-      IntlPhoneField(
-      decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
+              mainAxisAlignment: MainAxisAlignment.center,
 
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20)
-        )
-      ),
-       initialCountryCode: 'TN',
-        onChanged: (phone){
-        print(phone.completeNumber);
-        },
-      ),
-      TextField(
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
-          border:OutlineInputBorder(
-    borderRadius:BorderRadius.circular(20
-        ),
-      ),
-        ),
-    ),
-       ],
-    ),
-    ),
-    ],
-    )
-    ]
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children:[
+                Container(
+                    margin:EdgeInsets.all(8),
+                    child: Image.asset("images/vertbgblanc.png" ,scale:3 )),
+                Container(
+                  margin: EdgeInsets.all(15),
+                  padding:  EdgeInsets.fromLTRB(37, 34, 36, 63),
+                  width:  double.maxFinite,
+                  decoration:  BoxDecoration (
+                    color: c1,
+                    borderRadius:  BorderRadius.circular(30),
+                  ),
+                  child:
+                  Column(
+                    crossAxisAlignment:  CrossAxisAlignment.center,
+                    children: [
+                      Text("تسجيل الدخول " ,
+                        textAlign: TextAlign.center,
+                        style:GoogleFonts.workSans(
+                            color: Colors.white,
+                            fontSize: 22,fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
 
+
+                      IntlPhoneField(
+                        decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            prefixIconColor: c1,
+
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                            )
+                        ),
+                        initialCountryCode: 'TN',
+                        onChanged: (phone){
+                          print(phone.completeNumber);
+                        },
+                      ),
+                      TextField(
+                        controller: passwordController,
+                        obscureText:_isObscure,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.security_outlined),
+                          prefixIconColor: c1,
+                          filled: true,
+                          fillColor: Colors.white,
+                          border:OutlineInputBorder(
+                            borderRadius:BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+
+                      SizedBox(
+                        height: 50 ,
+                        width:290,
+                        child: ElevatedButton(onPressed :() { Navigator.pushNamed(context, '/measures');},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            child: Text("دخول",style: GoogleFonts.workSans(color:c1,
+                              fontSize: 25,fontWeight: FontWeight.bold
+                            )),),
+                      )
+
+                    ],
+                  ),
+                ),
+              ],
+            )
+          ]
+
+      )
     );
   }
+
+
 }
+
 
 

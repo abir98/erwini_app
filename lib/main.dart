@@ -1,9 +1,13 @@
+import 'package:erwini/dbHelper/mongodb.dart';
 import 'package:erwini/login.dart';
+import 'package:erwini/measures.dart';
 import 'package:erwini/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:erwini/login.dart';
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  //await Mongodatabase.connect();
   runApp(const MyApp(
   ));
 }
@@ -20,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const Mysplash(),
         '/login': (context) => const login(),
+        '/measures':(context)=> const measure(),
       },
 
     );
