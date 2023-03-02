@@ -6,9 +6,8 @@
  Path getClip(Size size) {
   // TODO: implement getClip
   debugPrint(size.width.toString());
-  var path = new Path();
+  var path = Path();
   path.lineTo(0, size.height);//start the path
-
   var firstStart= Offset(size.width / 5,size.height );
   var firstEnd =Offset(size.width/2.25,size.height - 50.0);
 

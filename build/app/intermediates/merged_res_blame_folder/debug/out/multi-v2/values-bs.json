@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\21629\\erwini-app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bs\\values-bs.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\21629\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\21629\\.gradle\\caches\\transforms-3\\68afc544509564f88915478be3590a43\\transformed\\core-1.6.0\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,10 +1,13 @@
-import 'package:erwini/map.dart';
+
+import 'package:erwini/measures.dart';
 import 'package:erwini/widgets/header.dart';
+import 'package:fancy_password_field/fancy_password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
-import 'measures.dart';
+
+
 
 
 class login extends StatefulWidget {
@@ -15,17 +18,18 @@ class login extends StatefulWidget {
 }
 Color c1 = const Color.fromARGB(255, 11, 164, 105);
 
-
 class _loginState extends State<login> {
   bool _isObscure = true;
-  TextEditingController passwordController=TextEditingController();
-
+  bool _validPassword = false;
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController phoneController =TextEditingController();
+  final FancyPasswordController _passwordController = FancyPasswordController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset : false,
-      body: Stack(
+      body: Column(
           children:<Widget> [
             ClipPath(clipper: waveclipper(),
               child:
@@ -36,7 +40,6 @@ class _loginState extends State<login> {
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
-
               crossAxisAlignment: CrossAxisAlignment.center,
               children:[
                 Container(
@@ -66,6 +69,7 @@ class _loginState extends State<login> {
 
 
                       IntlPhoneField(
+                        controller: phoneController,
                         decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
@@ -80,27 +84,71 @@ class _loginState extends State<login> {
                           print(phone.completeNumber);
                         },
                       ),
-                      TextField(
-                        controller: passwordController,
-                        obscureText:_isObscure,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.security_outlined),
-                          prefixIconColor: c1,
-                          filled: true,
-                          fillColor: Colors.white,
-                          border:OutlineInputBorder(
-                            borderRadius:BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 50,
-                      ),
 
                       SizedBox(
+                        width: 400,
+                        child: FancyPasswordField(
+    decoration: InputDecoration(
+    prefixIconColor: c1,
+    filled: true,
+    fillColor: Colors.white,
+    border:OutlineInputBorder(
+    borderRadius:BorderRadius.circular(10),
+    ),
+    ),
+                          validationRuleBuilder: (rules, value) {
+                            if (value.isEmpty) {
+                              return const SizedBox.shrink();
+                            }
+                            return ListView(
+                              shrinkWrap: true,
+                              children: rules
+                                  .map(
+                                    (rule) => rule.validate(value)
+                                    ? Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.check,
+                                      color: Colors.white,
+                                    ),
+                                    const SizedBox(width: 12),
+                                    Text(
+                                      rule.name,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14
+                                      ),
+                                    ),
+                                  ],
+                                )
+                                    : Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.close,
+                                      color: Colors.white,
+                                    ),
+                                    const SizedBox(width: 12),
+                                    Text(
+                                      rule.name,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                                  .toList(),
+                            );
+                          },
+                        ),
+                      ),
+                     SizedBox(
+                       height: 50
+                     ),
+                       SizedBox(
                         height: 50 ,
                         width:290,
-                        child: ElevatedButton(onPressed :() { Navigator.pushNamed(context, '/measures');},
+                        child: ElevatedButton(onPressed :() { Navigator.pushNamed(context, '/measures'); },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
                               shape: RoundedRectangleBorder(

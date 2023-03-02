@@ -21,7 +21,6 @@ class _mymapState extends State<mymap> {
       color: c1,
       animationDuration: Duration(milliseconds: 300 ),
       onTap: (value) => {
-
       },
       items: [
 

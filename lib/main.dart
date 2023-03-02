@@ -1,9 +1,11 @@
-import 'package:erwini/dbHelper/mongodb.dart';
+
 import 'package:erwini/login.dart';
+import 'package:erwini/map.dart';
 import 'package:erwini/measures.dart';
 import 'package:erwini/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:erwini/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -11,11 +13,15 @@ Future<void> main() async {
   runApp(const MyApp(
   ));
 }
-
+@override
+State<StatefulWidget> createState() {
+  // TODO: implement createState
+  throw UnimplementedError();
+}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,12 +30,13 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const Mysplash(),
         '/login': (context) => const login(),
-        '/measures':(context)=> const measure(),
+        '/measures': (context) => const measure(),
+        '/map': (context) => const mymap(),
       },
 
     );
   }
+
+
 }
-
-
 

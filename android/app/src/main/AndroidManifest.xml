@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.erwini">
+    package="com.example.lib">
    <application
-        android:label="erwini"
+        android:label="lib"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
