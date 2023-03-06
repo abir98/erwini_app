@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\21629\\erwini-app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bn\\values-bn.xml",
+            "outputFile": "C:\\Users\\21629\\erwiniapp\\erwiniapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bn\\values-bn.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\21629\\.gradle\\caches\\transforms-3\\68afc544509564f88915478be3590a43\\transformed\\core-1.6.0\\res\\values-bn\\values-bn.xml",
+                    "source": "C:\\Users\\21629\\.gradle\\caches\\transforms-3\\8f22acde5941151513ab67b10720f47b\\transformed\\core-1.6.0\\res\\values-bn\\values-bn.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

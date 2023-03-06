@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lib">
+    package="com.example.erwini">
    <application
         android:label="lib"
         android:name="${applicationName}"

@@ -292,7 +292,6 @@ class _measureState extends State<measure> {
                             circularStrokeCap: CircularStrokeCap.round,
                             center: Text(" 30 %" , style: TextStyle(fontSize: 24)),
                             animationDuration: 1000,
-
                           )
                         ],
                       ),
@@ -314,6 +313,7 @@ class _measureState extends State<measure> {
         Icon(Icons.home,color: Colors.white,size: 35,),
         Icon(Icons.location_on,color: Colors.white,size: 35,),
         Icon(Icons.settings,color: Colors.white,size: 35,),
+        Icon(Icons.history,color: Colors.white,size: 35,),
         Icon(Icons.notifications,color: Colors.white,size:35)
       ],
 
