@@ -1,8 +1,15 @@
+
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:erwini/history.dart';
 import 'package:erwini/widgets/header.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'login.dart';
+import 'map.dart';
+import 'measures.dart';
+import 'notifications.dart';
 
 class wells extends StatefulWidget {
   const wells({Key? key}) : super(key: key);
@@ -13,8 +20,10 @@ class wells extends StatefulWidget {
 
 class _wellsState extends State<wells> {
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
       appBar: AppBar(
         toolbarHeight: 75,
         backgroundColor: Colors.transparent,
@@ -28,39 +37,25 @@ class _wellsState extends State<wells> {
         ),
       ),
       body: SingleChildScrollView(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text("الأبار "),
-      ])),
-      bottomNavigationBar: CurvedNavigationBar(
-        height: 66,
-        backgroundColor: Colors.transparent,
-        color: c1,
-        animationDuration: Duration(milliseconds: 300),
-        onTap: (value) => {},
-        items: const [
-          Icon(
-            Icons.home,
-            color: Colors.white,
-            size: 35,
-          ),
-          Icon(
-            Icons.location_on,
-            color: Colors.white,
-            size: 35,
-          ),
-          Icon(
-            Icons.settings,
-            color: Colors.white,
-            size: 35,
-          ),
-          Icon(
-            Icons.history,
-            color: Colors.white,
-            size: 35,
-          ),
-          Icon(Icons.notifications, color: Colors.white, size: 35)
-        ],
-      ),
-    );
+        child:
+        Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              ":  الأبار ",
+              style: GoogleFonts.workSans(
+                  fontSize: 40, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+
+     ]
+      )
+
+    ));
+
+
   }
 }

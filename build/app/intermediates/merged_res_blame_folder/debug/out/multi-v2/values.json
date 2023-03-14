@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\21629\\erwiniapp\\erwiniapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\21629\\erwiniapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\21629\\.gradle\\caches\\transforms-3\\8f22acde5941151513ab67b10720f47b\\transformed\\core-1.6.0\\res\\values\\values.xml",
@@ -40,25 +40,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\21629\\erwiniapp\\erwiniapp\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,832",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "483,998"
-                    },
-                    "to": {
-                        "startLines": "101,106",
-                        "startColumns": "4,4",
-                        "startOffsets": "5967,6275",
-                        "endLines": "105,108",
-                        "endColumns": "12,12",
-                        "endOffsets": "6270,6439"
-                    }
-                },
-                {
                     "source": "C:\\Users\\21629\\.gradle\\caches\\transforms-3\\169167d13395ca58f6dc91af51cc2a1f\\transformed\\jetified-window-1.0.0-beta04\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,19,23,34,51",
@@ -75,6 +56,25 @@
                         "endLines": "7,8,9,10,79,134,138,287,304,312",
                         "endColumns": "11,59,51,44,59,24,24,24,24,24",
                         "endOffsets": "289,349,401,446,4832,8136,8333,17294,18408,18801"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\21629\\erwiniapp\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,832",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "483,998"
+                    },
+                    "to": {
+                        "startLines": "101,106",
+                        "startColumns": "4,4",
+                        "startOffsets": "5967,6275",
+                        "endLines": "105,108",
+                        "endColumns": "12,12",
+                        "endOffsets": "6270,6439"
                     }
                 }
             ]
