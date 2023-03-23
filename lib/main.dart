@@ -1,24 +1,22 @@
+
+
+import 'package:erwini/history.dart';
 import 'package:erwini/login.dart';
 import 'package:erwini/map.dart';
 import 'package:erwini/measures.dart';
 import 'package:erwini/splash.dart';
 import 'package:erwini/wells.dart';
 import 'package:flutter/material.dart';
-import 'package:erwini/login.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
+import 'notifications.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  //await Mongodatabase.connect();
   runApp(const MyApp());
 }
 
-@override
-State<StatefulWidget> createState() {
-  // TODO: implement createState
-  throw UnimplementedError();
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -34,6 +32,9 @@ class MyApp extends StatelessWidget {
         '/measures': (context) => const measure(),
         '/map': (context) => const mymap(),
         '/wells': (context) => const wells(),
+        '/history':(context)=> const History(),
+        '/notifications':(context)=> const Notifications(),
+
       },
     );
   }

@@ -13,17 +13,17 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\21629\erwiniapp\erwiniapp\android\app\src\debug\AndroidManifest.xml:7:5-66
-15-->C:\Users\21629\erwiniapp\erwiniapp\android\app\src\debug\AndroidManifest.xml:7:22-64
+15-->C:\Users\21629\erwiniapp\android\app\src\debug\AndroidManifest.xml:7:5-66
+15-->C:\Users\21629\erwiniapp\android\app\src\debug\AndroidManifest.xml:7:22-64
 16    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-16-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-81
-16-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-78
+16-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-81
+16-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-78
 17    <uses-permission android:name="android.permission.VIBRATE" />
-17-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-66
-17-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-63
+17-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-66
+17-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-63
 18    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
-18-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-81
-18-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-78
+18-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-81
+18-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-78
 19
 20    <application
 21        android:name="android.app.Application"
@@ -66,25 +66,25 @@
 57            android:value="2" />
 58
 59        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
-59-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-106
-59-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-103
+59-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-106
+59-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-103
 60        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver" >
-60-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-20:20
-60-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-107
+60-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-20:20
+60-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-107
 61            <intent-filter>
-61-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-19:29
+61-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-19:29
 62                <action android:name="android.intent.action.BOOT_COMPLETED" />
-62-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-79
-62-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:15:25-76
+62-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-79
+62-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:15:25-76
 63                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-63-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-84
-63-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:25-81
+63-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-84
+63-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:25-81
 64                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-64-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-82
-64-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:25-79
+64-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-82
+64-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:25-79
 65                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-65-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-82
-65-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:25-79
+65-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-82
+65-->[:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:25-79
 66            </intent-filter>
 67        </receiver>
 68
