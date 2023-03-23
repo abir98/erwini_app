@@ -27,11 +27,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const Mysplash(),
+        '/': (context) =>  Wells(),
         '/login': (context) => const login(),
         '/measures': (context) => const measure(),
         '/map': (context) => const mymap(),
-        '/wells': (context) => const wells(),
+        '/wells': (context) =>  Wells(),
         '/history':(context)=> const History(),
         '/notifications':(context)=> const Notifications(),
 

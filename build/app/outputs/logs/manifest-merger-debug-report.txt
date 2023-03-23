@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:3:4-33:19
+INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:3:4-40:19
 MERGED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-21:19
 MERGED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-21:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\21629\.gradle\caches\transforms-3\169167d13395ca58f6dc91af51cc2a1f\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
@@ -16,11 +16,11 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\21
 	android:name
 		INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml
 manifest
-ADDED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-34:12
-MERGED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-34:12
+ADDED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
+INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
+INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
+INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
+MERGED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
 MERGED from [:shared_preferences_android] C:\Users\21629\erwiniapp\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-23:12
 MERGED from [:path_provider_android] C:\Users\21629\erwiniapp\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -52,11 +52,11 @@ INJECTED from C:\Users\21629\erwiniapp\android\app\src\debug\AndroidManifest.xml
 		INJECTED from C:\Users\21629\erwiniapp\android\app\src\debug\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-34:12
+		ADDED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
 		INJECTED from C:\Users\21629\erwiniapp\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-34:12
+		ADDED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
 		INJECTED from C:\Users\21629\erwiniapp\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\21629\erwiniapp\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -137,9 +137,8 @@ ADDED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter
 	android:name
 		ADDED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-103
 receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver
-ADDED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-20:20
-	android:name
-		ADDED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-107
+MERGED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-20:20
+MERGED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-20:20
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED+action:name:android.intent.action.QUICKBOOT_POWERON+action:name:com.htc.intent.action.QUICKBOOT_POWERON
 ADDED from [:flutter_local_notifications] C:\Users\21629\erwiniapp\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-19:29
 action#android.intent.action.BOOT_COMPLETED

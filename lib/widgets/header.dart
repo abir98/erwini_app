@@ -22,10 +22,8 @@
  return path;
 
  }
-
  @override
  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-  // TODO: implement shouldReclip
-  throw UnimplementedError();
+  return oldClipper != this;
  }
 }

@@ -26,14 +26,16 @@ class _loginState extends State<login> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          toolbarHeight: 75,
+          toolbarHeight: 138,
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           flexibleSpace: ClipPath(
             clipper: waveclipper(),
             child: Container(
               color: const Color.fromARGB(255, 11, 164, 105),
-              height: 130,
+              width: MediaQuery.of(context).size.width,
+              height: 250,
+
             ),
           ),
         ),

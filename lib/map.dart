@@ -20,9 +20,42 @@ class _mymapState extends State<mymap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Stack(
+      body:SingleChildScrollView(
+        child:Center(
+          child:Text("hello world")
+        )
 
-      ),
+      ), bottomNavigationBar: CurvedNavigationBar(
+      height: 66,
+      backgroundColor: Colors.transparent,
+      color: c1,
+      animationDuration: const Duration(milliseconds: 300),
+
+      items:  [
+        Icon(
+          Icons.home,
+          color: Colors.white,
+          size: 35,
+        ),
+        Icon(
+          Icons.location_on,
+          color: Colors.white,
+          size: 35,
+        ),
+        Icon(
+          Icons.settings,
+          color: Colors.white,
+          size: 35,
+        ),
+        Icon(
+          Icons.history,
+          color: Colors.white,
+          size: 35,
+        ),
+        Icon(Icons.notifications, color: Colors.white, size: 35)
+      ],
+
+    )
     );
   }
 }
