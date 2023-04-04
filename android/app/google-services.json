@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "666771051759",
+    "project_id": "erwini",
+    "storage_bucket": "erwini.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666771051759:android:6734c0fd4152eb2e87b71a",
+        "android_client_info": {
+          "package_name": "com.example.erwini"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666771051759-q216dch458hgaq4o4bbtsb49pm841ar4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuQJ7WqGmhc22pKHqQPd2IdcrswGSz36s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666771051759-q216dch458hgaq4o4bbtsb49pm841ar4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
