@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:erwini/pages/measures.dart';
 import 'package:erwini/widgets/header.dart';
 import 'package:erwini/widgets/language_constants.dart';
@@ -7,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import"package:http/http.dart" as http;
+import 'package:intl_phone_field/phone_number.dart';
 import '../main.dart';
 
 class login extends StatefulWidget {
@@ -19,9 +22,32 @@ class login extends StatefulWidget {
 
 Color c1 = const Color.fromARGB(255, 11, 164, 105);
 
+
+Future<Map<String, dynamic>> loginuser(phone,password) async {
+  final response = await http.post(
+    Uri.parse('http://localhost:8080/api/auth/signin'),
+    headers: {'Content-Type': 'application/json'},
+    body: jsonEncode({'phone': phone, 'password': password}),
+  );
+  if (response.statusCode == 200) {
+    // Login successful, return user data
+    return jsonDecode(response.body);
+  } else if (response.statusCode == 401) {
+    // Invalid credentials
+    throw Exception('Invalid phone or password');
+  } else {
+    // Something went wrong
+    throw Exception('Failed to login');
+  }
+}
+
+
 class _loginState extends State<login> {
   TextEditingController phoneController = TextEditingController();
-  final FancyPasswordController _passwordController = FancyPasswordController();
+  TextEditingController passwordController = TextEditingController();
+   late PhoneNumber phone;
+   var password;
+
 
   @override
   Widget build(BuildContext context) {
@@ -93,8 +119,6 @@ class _loginState extends State<login> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-
-
                   IntlPhoneField(
 
                     decoration: InputDecoration(
@@ -105,8 +129,9 @@ class _loginState extends State<login> {
                           borderRadius: BorderRadius.circular(10),
                         )),
                     initialCountryCode: 'TN',
-                    onChanged: (phone) {
-                      print(phone.completeNumber);
+                    controller: phoneController,
+                    onChanged: (value) {
+                      phone = value;
                     },
                   ),
                   SizedBox(
@@ -120,6 +145,7 @@ class _loginState extends State<login> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
+
                       validationRuleBuilder: (rules, value) {
                         if (value.isEmpty) {
                           return const SizedBox.shrink();
@@ -163,6 +189,10 @@ class _loginState extends State<login> {
                               .toList(),
                         );
                       },
+                      controller: passwordController,
+                      onChanged: (value) {
+                        password = value;
+                      },
                     ),
                   ),
                   SizedBox(height: 50),
@@ -171,7 +201,7 @@ class _loginState extends State<login> {
                     width: 290,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/homepage');
+                        loginuser(phone.toString(), password);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
@@ -193,3 +223,4 @@ class _loginState extends State<login> {
         ));
   }
 }
+

@@ -11,7 +11,6 @@ import 'package:erwini/widgets/language_constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'pages/notifications.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -19,14 +18,14 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  //await Firebase.initializeApp();
 
-  FirebaseMessaging messaging = FirebaseMessaging.instance;
+  //FirebaseMessaging messaging = FirebaseMessaging.instance;
 
   // Configure your app to handle incoming FCM messages
-  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+  //FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     // Handle the incoming message
-  });
+  //});
 
   runApp(const MyApp());
 }
@@ -75,7 +74,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: {
-          '/': (context) => Mysplash(),
+          '/': (context) => const Mysplash(),
           '/login': (context) => const login(),
           '/measures': (context) => const measure(),
           '/map': (context) => const mymap(),
