@@ -3,12 +3,15 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:erwini/pages/history.dart';
 import 'package:erwini/pages/wells.dart';
+import'package:erwini/pages/measures.dart';
+import 'package:erwini/pages/map.dart';
+import 'package:erwini/pages/history.dart';
+import 'package:erwini/pages/notifications.dart';
 import'package:flutter/material.dart';
 
 import 'login.dart';
-import 'map.dart';
-import 'measures.dart';
-import 'notifications.dart';
+
+
 
 class homepage extends StatefulWidget {
    const homepage({Key? key}) : super(key: key);
@@ -17,9 +20,8 @@ class homepage extends StatefulWidget {
   State<homepage> createState() => _homepageState();
 }
 final List<Widget> _pages = [
-
-  measure(),
   mymap(),
+  measure(),
   Wells(),
   History(),
   Notifications(),
@@ -51,12 +53,12 @@ class _homepageState extends State<homepage> {
          animationDuration: const Duration(milliseconds: 300),
          items: [
            Icon(
-             Icons.home,
+             Icons.location_on,
              color: Colors.white,
              size: 35,
            ),
            Icon(
-             Icons.location_on,
+             Icons.data_thresholding,
              color: Colors.white,
              size: 35,
            ),

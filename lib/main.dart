@@ -8,8 +8,6 @@ import 'package:erwini/pages/measures.dart';
 import 'package:erwini/pages/splash.dart';
 import 'package:erwini/pages/wells.dart';
 import 'package:erwini/widgets/language_constants.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'pages/notifications.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

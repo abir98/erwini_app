@@ -54,7 +54,7 @@ class _measureState extends State<measure> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
-                Image.asset("images/branche.png",scale: 7.0,),
+                Image.asset("images/branche.gif",scale: 7.0,),
                 SizedBox(width:40),
                 Text(
                     " ${translation(context).zone} : $zone ",

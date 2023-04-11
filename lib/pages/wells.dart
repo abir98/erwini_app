@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:toggle_switch/toggle_switch.dart';
+import 'package:omni_datetime_picker/omni_datetime_picker.dart';
+import'dart:ui';
 
 import 'login.dart';
 
@@ -55,9 +56,10 @@ class _WellsState extends State<Wells> {
                     height: 100,
                     width: 100,
                     child: FittedBox(
-                        fit:BoxFit.fill,
-                        child:
-                        IconButton(onPressed:(){}, icon:Image.asset('images/plus.png'))),
+                        fit: BoxFit.fill,
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: Image.asset('images/plus.png'))),
                   ),
                   Text(
                     ":  الأبار ",
@@ -91,13 +93,9 @@ class _WellsState extends State<Wells> {
                               ),
                               leading: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-
-                                ],
+                                children: [ ],
                               ),
-
                             ),
-
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -110,19 +108,46 @@ class _WellsState extends State<Wells> {
                                   },
                                 ),
                                 GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => login()),
+                                    onTap: () async {
+                                      List<DateTime>? dateTimeList = await showOmniDateTimeRangePicker(
+                                        context: context,
+                                        startInitialDate: DateTime.now(),
+                                        startFirstDate: DateTime(1600).subtract(const Duration(days: 3652)),
+                                        startLastDate: DateTime.now().add(const Duration(days: 3652)),
+                                        endInitialDate: DateTime.now(),
+                                        endFirstDate: DateTime(1600).subtract(const Duration(days: 3652)),
+                                        endLastDate: DateTime.now().add(const Duration(days: 3652)),
+                                        is24HourMode: false,
+                                        isShowSeconds: false,
+                                         //change minutesInterval to timeInterval
+                                        secondsInterval: 1,
+                                        borderRadius: const BorderRadius.all(Radius.circular(16)),
+                                        constraints: const BoxConstraints(maxWidth: 350, maxHeight: 650),
+                                        transitionBuilder: (context, anim1, anim2, child) {
+                                          return FadeTransition(
+                                            opacity:
+                                            anim1.drive(Tween(begin: 0, end: 1)),
+                                            child: child,
+                                          );
+                                        },
+                                        transitionDuration:
+                                        const Duration(milliseconds: 200),
+                                        barrierDismissible: true,
+                                        selectableDayPredicate: (dateTime) {
+                                          // Disable 25th Feb 2023
+                                          if (dateTime == DateTime(2023, 2, 25)) {
+                                            return false;
+                                          } else {
+                                            return true;
+                                          }
+                                        },
                                       );
                                     },
                                     //
                                     child: Image.asset('images/calendar.png')),
                               ],
                             ),
-                              ],
-
+                          ],
                         ),
                       ),
                     );
