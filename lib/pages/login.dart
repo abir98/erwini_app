@@ -202,11 +202,14 @@ class _loginState extends State<login> {
                                 if(response){
                                   Navigator.pushNamedAndRemoveUntil(context,'/homepage', (route) => false)
                                 }
-                                else { AlertDialog(
-                                  title: Text("error login"),
-                                )
-
-                                }
+                             else {
+                                 showDialog(
+                                 context: context,
+                                 builder: (context) => AlertDialog(
+                                   title: Text("check your credentials"),
+                                 )
+                             )
+                          }
                              });
                           }
                         }

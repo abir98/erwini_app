@@ -161,6 +161,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
+  dio:
+    dependency: "direct main"
+    description:
+      name: dio
+      sha256: "347d56c26d63519552ef9a569f2a593dda99a81fdbdff13c584b7197cfe05059"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.2"
   easy_localization:
     dependency: "direct main"
     description:
@@ -312,6 +320,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+  google_maps_flutter:
+    dependency: "direct main"
+    description:
+      name: google_maps_flutter
+      sha256: "0a7e0bd1dfe594bc86892d2e69062e3f80b267e378042d82e6b87a8efc798013"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.6"
+  google_maps_flutter_android:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_android
+      sha256: b1aeab571b33e983ced9977f2f0eca2b25925f6319e99e3901cfc1675e1b5ada
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.13"
+  google_maps_flutter_ios:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_ios
+      sha256: e9ad74415a222573625a2c1717adc1e375b18e8ce660fc12db734d1bda1132d4
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.1"
+  google_maps_flutter_platform_interface:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_platform_interface
+      sha256: a07811d2b82055815ede75e1fe4b7b76f71a0b4820b26f71bdaddd157d6a3e20
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.6"
   http:
     dependency: "direct main"
     description:
@@ -680,14 +720,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2"
+  scaled_list:
+    dependency: "direct main"
+    description:
+      name: scaled_list
+      sha256: "42754e6140dcb7d4291a6fb170364e000b6da1cae304fab96f35c01fa8599058"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   shared_preferences:
     dependency: "direct main"
     description:
       name: shared_preferences
-      sha256: "858aaa72d8f61637d64e776aca82e1c67e6d9ee07979123c5d17115031c1b13b"
+      sha256: "16d3fb6b3692ad244a695c0183fca18cf81fd4b821664394a781de42386bf022"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.1"
   shared_preferences_android:
     dependency: transitive
     description:
@@ -789,6 +837,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  stream_transform:
+    dependency: transitive
+    description:
+      name: stream_transform
+      sha256: "14a00e794c7c11aa145a170587321aedce29769c08d7f58b1d141da75e3b1c6f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   string_scanner:
     dependency: transitive
     description:

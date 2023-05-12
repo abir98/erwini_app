@@ -5,7 +5,9 @@ import 'package:erwini/pages/homepage.dart';
 import 'package:erwini/pages/login.dart';
 import 'package:erwini/pages/map.dart';
 import 'package:erwini/pages/measures.dart';
+import 'package:erwini/pages/pumps.dart';
 import 'package:erwini/pages/splash.dart';
+import 'package:erwini/pages/vannes.dart';
 import 'package:erwini/pages/wells.dart';
 import 'package:erwini/widgets/language_constants.dart';
 import 'package:flutter/material.dart';
@@ -75,12 +77,15 @@ class _MyAppState extends State<MyApp> {
           '/': (context) => const Mysplash(),
           '/login': (context) => const login(),
           '/measures': (context) => const measure(),
-          '/map': (context) => const mymap(),
-          '/wells': (context) => Wells(),
+          '/map': (context) => mymap(),
+         '/wells':(context) => Wells(),
           '/history': (context) => const History(),
           '/notifications': (context) => const Notifications(),
           '/homepage': (context) => const homepage(),
+          '/vanne':(context) => const Vannes(),
+          '/pump':(context)=> const Pump()
         },
+      title: "erwini"
 
     );
 

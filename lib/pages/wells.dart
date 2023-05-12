@@ -1,12 +1,13 @@
+import 'dart:convert';
+
 import 'package:erwini/widgets/header.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:omni_datetime_picker/omni_datetime_picker.dart';
-import'dart:ui';
+import 'package:http/http.dart' as http;
 
-import 'login.dart';
+
 
 class Wells extends StatefulWidget {
   const Wells({super.key});
@@ -15,19 +16,15 @@ class Wells extends StatefulWidget {
   _WellsState createState() => _WellsState();
 }
 
+
 class _WellsState extends State<Wells> {
+
   List<String> Wells = [
-    " البئر 1   ",
-    " البئر2     ",
-    " البئر 2    ",
-    " البئر 2    ",
-    " البئر 2    ",
-    " البئر 2    ",
-    " البئر 2    ",
-    " البئر 2    ",
+   "well 1",
+    "well 2"
   ];
   List<bool> wellStatusList = List.generate(3, (index) => false);
-  bool _switchValue = false;
+  bool _switchValue = true;
 
   @override
   Widget build(BuildContext context) {
@@ -91,10 +88,7 @@ class _WellsState extends State<Wells> {
                                     fontSize: 30,
                                     fontWeight: FontWeight.normal),
                               ),
-                              leading: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [ ],
-                              ),
+                              
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -142,6 +142,13 @@
             </list>
           </value>
         </entry>
+        <entry key="dio">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.1.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="easy_localization">
           <value>
             <list>
@@ -279,6 +286,34 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-3.0.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="google_maps_flutter">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter-2.2.6/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="google_maps_flutter_android">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_android-2.4.13/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="google_maps_flutter_ios">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_ios-2.2.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="google_maps_flutter_platform_interface">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_platform_interface-2.2.6/lib" />
             </list>
           </value>
         </entry>
@@ -604,10 +639,17 @@
             </list>
           </value>
         </entry>
+        <entry key="scaled_list">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/scaled_list-2.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="shared_preferences">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.1.0/lib" />
+              <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.1.1/lib" />
             </list>
           </value>
         </entry>
@@ -699,6 +741,13 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/stream_channel-2.1.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="stream_transform">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/stream_transform-2.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -837,6 +886,7 @@
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/curved_navigation_bar-1.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/dart_style-2.2.4/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/decimal-2.3.2/lib" />
+      <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/easy_localization-3.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/easy_logger-0.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/equatable-2.0.5/lib" />
@@ -854,6 +904,10 @@
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.5/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/glob-2.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-3.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter-2.2.6/lib" />
+      <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_android-2.4.13/lib" />
+      <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_ios-2.2.1/lib" />
+      <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter_platform_interface-2.2.6/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/http-0.13.5/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-0.8.7+1/lib" />
@@ -900,7 +954,8 @@
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/rational-2.2.2/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/sasl_scram-0.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/saslprep-1.0.2/lib" />
-      <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.1.0/lib" />
+      <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/scaled_list-2.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_android-2.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_foundation-2.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_linux-2.2.0/lib" />
@@ -913,6 +968,7 @@
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common-2.4.3/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.11.0/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/stream_channel-2.1.1/lib" />
+      <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/stream_transform-2.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/string_scanner-1.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/synchronized-3.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../AppData/Local/Pub/Cache/hosted/pub.dev/term_glyph-1.2.1/lib" />
