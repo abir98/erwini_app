@@ -15,7 +15,6 @@ import 'pages/notifications.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   //await Firebase.initializeApp();
@@ -67,7 +66,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return 
+
+      MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
         locale: _locale,
@@ -88,6 +89,8 @@ class _MyAppState extends State<MyApp> {
       title: "erwini"
 
     );
+
+
 
   }
 }

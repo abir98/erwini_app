@@ -1,13 +1,9 @@
-import 'dart:convert';
-
+import 'package:erwini/services/wellsService.dart';
 import 'package:erwini/widgets/header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:omni_datetime_picker/omni_datetime_picker.dart';
-import 'package:http/http.dart' as http;
-
-
 
 class Wells extends StatefulWidget {
   const Wells({super.key});
@@ -16,15 +12,17 @@ class Wells extends StatefulWidget {
   _WellsState createState() => _WellsState();
 }
 
-
 class _WellsState extends State<Wells> {
 
-  List<String> Wells = [
-   "well 1",
-    "well 2"
-  ];
-  List<bool> wellStatusList = List.generate(3, (index) => false);
-  bool _switchValue = true;
+
+  WellService wellservice = WellService();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    wellservice.refreshData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,111 +41,184 @@ class _WellsState extends State<Wells> {
           ),
         ),
         body: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    height: 100,
-                    width: 100,
-                    child: FittedBox(
-                        fit: BoxFit.fill,
-                        child: IconButton(
-                            onPressed: () {},
-                            icon: Image.asset('images/plus.png'))),
-                  ),
-                  Text(
-                    ":  الأبار ",
-                    style: GoogleFonts.workSans(
-                        fontSize: 40, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-              SizedBox(
+          scrollDirection: Axis.vertical,
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 100,
+                  width: 100,
+                  child: FittedBox(
+                      fit: BoxFit.fill,
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: Image.asset('images/plus.png'))),
+                ),
+                Text(
+                  ":  الأبار ",
+                  style: GoogleFonts.workSans(
+                      fontSize: 40, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+            SizedBox(
                 height: 800,
                 width: 600,
-                child: ListView.builder(
-                  itemCount: Wells.length,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return SizedBox(
-                      height: 200,
-                      child: Card(
-                        elevation: 2.0,
-                        margin: EdgeInsets.all(15),
-                        child: Column(
-                          children: [
-                            ListTile(
-                              title: Text(
-                                Wells[index],
-                                textDirection: TextDirection.rtl,
-                                style: GoogleFonts.workSans(
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                              
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                CupertinoSwitch(
-                                  value: _switchValue,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      _switchValue = value;
-                                    });
-                                  },
-                                ),
-                                GestureDetector(
-                                    onTap: () async {
-                                      List<DateTime>? dateTimeList = await showOmniDateTimeRangePicker(
-                                        context: context,
-                                        startInitialDate: DateTime.now(),
-                                        startFirstDate: DateTime(1600).subtract(const Duration(days: 3652)),
-                                        startLastDate: DateTime.now().add(const Duration(days: 3652)),
-                                        endInitialDate: DateTime.now(),
-                                        endFirstDate: DateTime(1600).subtract(const Duration(days: 3652)),
-                                        endLastDate: DateTime.now().add(const Duration(days: 3652)),
-                                        is24HourMode: false,
-                                        isShowSeconds: false,
-                                         //change minutesInterval to timeInterval
-                                        secondsInterval: 1,
-                                        borderRadius: const BorderRadius.all(Radius.circular(16)),
-                                        constraints: const BoxConstraints(maxWidth: 350, maxHeight: 650),
-                                        transitionBuilder: (context, anim1, anim2, child) {
-                                          return FadeTransition(
-                                            opacity:
-                                            anim1.drive(Tween(begin: 0, end: 1)),
-                                            child: child,
-                                          );
-                                        },
-                                        transitionDuration:
-                                        const Duration(milliseconds: 200),
-                                        barrierDismissible: true,
-                                        selectableDayPredicate: (dateTime) {
-                                          // Disable 25th Feb 2023
-                                          if (dateTime == DateTime(2023, 2, 25)) {
-                                            return false;
-                                          } else {
-                                            return true;
-                                          }
-                                        },
-                                      );
-                                    },
-                                    //
-                                    child: Image.asset('images/calendar.png')),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ])));
+                child: StreamBuilder(
+                    stream: wellservice.onData,
+                    builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
+                      if (snapshot.hasData) {
+                        return ListView.builder(
+                            itemCount: wellservice.wellData.length,
+                            shrinkWrap: true,
+                            itemBuilder: (BuildContext context, index) {
+                              return SizedBox(
+                                  height: 200,
+                                  child: Card(
+                                      elevation: 2.0,
+                                      margin: EdgeInsets.all(15),
+                                      child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            ListTile(
+                                              title: Text(
+                                                "well ${(index + 1).toString()}",
+                                                textDirection:
+                                                    TextDirection.rtl,
+                                                style: GoogleFonts.workSans(
+                                                    fontSize: 30,
+                                                    fontWeight:
+                                                        FontWeight.normal),
+                                              ),
+                                            ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                CupertinoSwitch(
+                                                  value: wellservice
+                                                              .wellData[index]
+                                                          ['etat'] ==
+                                                      'ouvert',
+                                                  onChanged:
+                                                      (bool value) async {
+                                                    final switchValue = value
+                                                        ? 'ouvert'
+                                                        : 'fermé';
+                                                    try {
+                                                      await wellservice
+                                                          .updatestate(
+                                                              switchValue,
+                                                              wellservice
+                                                                      .wellData[
+                                                                  index]['_id']);
+                                                    } catch (e) {
+                                                      // handle error
+                                                      print('eror');
+                                                    }
+                                                    setState(() {
+                                                      wellservice.wellData[
+                                                              index]['etat'] =
+                                                          switchValue;
+                                                    });
+                                                    print(switchValue);
+                                                  },
+                                                ),
+                                                GestureDetector(
+                                                    onTap: () async {
+                                                      List<DateTime>?
+                                                          dateTimeList =
+                                                          await showOmniDateTimeRangePicker(
+                                                        context: context,
+                                                        startInitialDate:
+                                                            DateTime.now(),
+                                                        startFirstDate: DateTime(
+                                                                1600)
+                                                            .subtract(
+                                                                const Duration(
+                                                                    days:
+                                                                        3652)),
+                                                        startLastDate:
+                                                            DateTime.now().add(
+                                                                const Duration(
+                                                                    days:
+                                                                        3652)),
+                                                        endInitialDate:
+                                                            DateTime.now(),
+                                                        endFirstDate: DateTime(
+                                                                1600)
+                                                            .subtract(
+                                                                const Duration(
+                                                                    days:
+                                                                        3652)),
+                                                        endLastDate:
+                                                            DateTime.now().add(
+                                                                const Duration(
+                                                                    days:
+                                                                        3652)),
+                                                        is24HourMode: false,
+                                                        isShowSeconds: false,
+                                                        //change minutesInterval to timeInterval
+                                                        secondsInterval: 1,
+                                                        borderRadius:
+                                                            const BorderRadius
+                                                                    .all(
+                                                                Radius.circular(
+                                                                    16)),
+                                                        constraints:
+                                                            const BoxConstraints(
+                                                                maxWidth: 350,
+                                                                maxHeight: 650),
+                                                        transitionBuilder:
+                                                            (context, anim1,
+                                                                anim2, child) {
+                                                          return FadeTransition(
+                                                            opacity: anim1
+                                                                .drive(Tween(
+                                                                    begin: 0,
+                                                                    end: 1)),
+                                                            child: child,
+                                                          );
+                                                        },
+                                                        transitionDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    200),
+                                                        barrierDismissible:
+                                                            true,
+                                                        selectableDayPredicate:
+                                                            (dateTime) {
+                                                          // Disable 25th Feb 2023
+                                                          if (dateTime ==
+                                                              DateTime(2023, 2,
+                                                                  25)) {
+                                                            return false;
+                                                          } else {
+                                                            return true;
+                                                          }
+                                                        },
+                                                      );
+                                                    },
+                                                    //
+                                                    child: Image.asset(
+                                                        'images/calendar.png')),
+                                              ],
+                                            )
+                                          ])));
+                            });
+                      } else if (snapshot.hasError) {
+                        return Center(
+                          child: Text('Error loading data'),
+                        );
+                      } else
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                    })),
+          ]),
+        ));
   }
 }

@@ -1,14 +1,14 @@
-import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:scaled_list/scaled_list.dart';
+
 import '../services/SensorService.dart';
 
 import '../widgets/header.dart';
 import '../widgets/language_constants.dart';
 import 'login.dart';
-
 
 
 class measure extends StatefulWidget {
@@ -26,42 +26,24 @@ class _measureState extends State<measure> {
     Colors.lightGreen
   ];
 
-
-  SensorService sensorservice = SensorService();
-
-
+   SensorService sensorservice = SensorService();
 
   @override
   void initState() {
-    super.initState();
-    _fetchSensorData();
-
     sensorservice.startRefreshTimer();
-
-
+    super.initState();
   }
 
   @override
   void dispose() {
-    super.dispose();
+    // TODO: implement dispose
     sensorservice.stopRefreshTimer();
-
-  }
-
-
-  Future<void> _fetchSensorData() async {
-    try {
-      final service = SensorService();
-      sensorservice.sensorData = await service.getCapteurData();
-      print(sensorservice.sensorData);
-    } catch (e) {
-      print('Error fetching sensor data: $e');
-    }
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+  return Scaffold(
       backgroundColor: Colors.white,
       extendBody: true,
       resizeToAvoidBottomInset: false,
@@ -78,77 +60,103 @@ class _measureState extends State<measure> {
           ),
         ),
       ),
-      body: LayoutBuilder(
+      body: StreamBuilder(
+        stream:  sensorservice.onData,
+       builder:(context, AsyncSnapshot<List<dynamic>> snapshot)
+      {
+    if (snapshot.hasData) {
+      return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-         if (sensorservice.sensorData.isEmpty) {
-            return Center(child: CircularProgressIndicator());
-         }
+          print(sensorservice.sensorData.length);
           return ListView.builder(
             itemCount: sensorservice.sensorData.length,
             itemBuilder: (context, index) {
               return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        "images/branche.gif",
-                        scale: 7.0,
-                      ),
-                      SizedBox(width: 40),
-                      Text("Zone ${(index + 1).toString()}",
-                        style: GoogleFonts.workSans(
-                            fontSize: 24, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Text(
-                        "$arbre : ${translation(context).implants}",
-                        style: GoogleFonts.workSans(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center),
-                  ]),
-              ScaledList(
-              showDots: true,
-              itemCount: sensorservice.sensorData[index]['capteurs'].length,
-              itemColor: (index) {
-              return kMixedColors[index % kMixedColors.length];
-              },
-              marginWidthRatio: 0.1,
-              cardWidthRatio: 0.4,
-              itemBuilder: (subIndex, selectedIndex) {
-              return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-              Text(
-              sensorservice.sensorData[index]['capteurs'][subIndex]['Type'].toString(),
-              style: TextStyle(color: Colors.white, fontSize: 24),
-              ),
-              CircularPercentIndicator(
-              animation: true,
-              radius: 70,
-              lineWidth: 10,
-              percent: sensorservice.sensorData[index]['capteurs'][subIndex]['Mesure'] / 100,
-              progressColor: c1,
-              backgroundColor: Colors.white,
-              circularStrokeCap: CircularStrokeCap.round,
-              center: Text(
-              sensorservice.sensorData[index]['capteurs'][subIndex]['Mesure'].toString(),
-              style: TextStyle(fontSize: 24),
-              ),
-              animationDuration: 1000,
-              ),
-              ],
-              );}
-              )
-              ]
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "images/branche.gif",
+                          scale: 7.0,
+                        ),
+                        SizedBox(width: 40),
+                        Text("Zone ${(index + 1).toString()}",
+                          style: GoogleFonts.workSans(
+                              fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Text(
+                          "$arbre : ${translation(context).implants}",
+                          style: GoogleFonts.workSans(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center),
+                    ]),
+                    ScaledList(
+                        showDots: true,
+                        itemCount: sensorservice.sensorData[index]['capteurs']
+                            .length,
+                        itemColor: (index) {
+                          return kMixedColors[index % kMixedColors.length];
+                        },
+                        marginWidthRatio: 0.1,
+                        cardWidthRatio: 0.4,
+                        itemBuilder: (subIndex, selectedIndex) {
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                sensorservice
+                                    .sensorData[index]['capteurs'][subIndex]['Type']
+                                    .toString(),
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              ),
+                              CircularPercentIndicator(
+                                animation: true,
+                                radius: 70,
+                                lineWidth: 10,
+                                percent: sensorservice
+                                    .sensorData[index]['capteurs'][subIndex]['Mesure'] /
+                                    100,
+                                progressColor: c1,
+                                backgroundColor: Colors.white,
+                                circularStrokeCap: CircularStrokeCap.round,
+                                center: Text(
+                                  sensorservice
+                                      .sensorData[index]['capteurs'][subIndex]['Mesure']
+                                      .toString(),
+                                  style: TextStyle(fontSize: 24),
+                                ),
+                                animationDuration: 1000,
+                              ),
+                            ],
+                          );
+                        }
+                    )
+                  ]
               );
             },
           );
         },
-      ),
+      );
+
+         }
+       else if (snapshot.hasError) {
+      return Center(
+        child: Text('Error loading data'),
+      );
+    }
+      else return  Center(
+        child: CircularProgressIndicator(),
+      );
+      }
+
+      )
+
     );
   }
 }
